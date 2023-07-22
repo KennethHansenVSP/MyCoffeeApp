@@ -26,7 +26,7 @@ namespace MyCoffeeApp.ViewModels
             Title = "My Coffee";
 
             Coffee = new ObservableRangeCollection<Coffee>();
-  
+
 
             RefreshCommand = new AsyncCommand(Refresh);
             AddCommand = new AsyncCommand(Add);

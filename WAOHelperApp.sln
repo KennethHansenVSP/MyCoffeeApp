@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30717.126
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.33913.275
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCoffeeApp.Android", "MyCoffeeApp\MyCoffeeApp.Android\MyCoffeeApp.Android.csproj", "{60CA8B6A-A9BE-4994-A252-AF48671836E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAOHelperApp.Android", "MyCoffeeApp\MyCoffeeApp.Android\WAOHelperApp.Android.csproj", "{60CA8B6A-A9BE-4994-A252-AF48671836E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCoffeeApp.iOS", "MyCoffeeApp\MyCoffeeApp.iOS\MyCoffeeApp.iOS.csproj", "{D0CF2A5B-8BD6-4E6F-9FBC-AF984671D5FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAOHelperApp.iOS", "MyCoffeeApp\MyCoffeeApp.iOS\WAOHelperApp.iOS.csproj", "{D0CF2A5B-8BD6-4E6F-9FBC-AF984671D5FB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCoffeeApp", "MyCoffeeApp\MyCoffeeApp\MyCoffeeApp.csproj", "{F26C65BA-26F3-4634-8AB4-A5148AF07A74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WAOHelperApp", "MyCoffeeApp\MyCoffeeApp\WAOHelperApp.csproj", "{F26C65BA-26F3-4634-8AB4-A5148AF07A74}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{AD5BBCE8-77E8-4125-A662-C9D27DA69AA2}"
 EndProject

@@ -36,6 +36,9 @@
     <Compile Update="Views\AnimationPage.xaml.cs">
       <DependentUpon>AnimationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\MyCoffee\WAOUpgradePage.xaml.cs">
+      <DependentUpon>WAOUpgradePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

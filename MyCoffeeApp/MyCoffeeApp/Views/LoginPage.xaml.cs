@@ -22,13 +22,13 @@ namespace MyCoffeeApp.Views
             base.OnAppearing();
             //var loggedin = true;
             //if(loggedin)
-                await Shell.Current.GoToAsync($"//{nameof(CoffeeEquipmentPage)}");
+                await Shell.Current.GoToAsync($"//{nameof(WAOUpgradePage)}");
 
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync($"//{nameof(CoffeeEquipmentPage)}");
+            await Shell.Current.GoToAsync($"//{nameof(WAOUpgradePage)}");
         }
 
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)

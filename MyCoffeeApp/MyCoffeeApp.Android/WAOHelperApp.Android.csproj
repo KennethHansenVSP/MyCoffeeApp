@@ -111,9 +111,9 @@
     <AndroidResource Include="Resources\drawable\icon_feed.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MyCoffeeApp\MyCoffeeApp.csproj">
+    <ProjectReference Include="..\MyCoffeeApp\WAOHelperApp.csproj">
       <Project>{F26C65BA-26F3-4634-8AB4-A5148AF07A74}</Project>
-      <Name>MyCoffeeApp</Name>
+      <Name>WAOHelperApp</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -179,7 +179,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadGenericExceptionInfoBarMyCoffeeAppAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

@@ -114,8 +114,8 @@
                                     Light={StaticResource SystemGray5Dark}}"
                              Glyph="{StaticResource IconCoffee}"/>
             </Tab.Icon>
-            <ShellContent Title="Light" ContentTemplate="{DataTemplate local:CoffeeEquipmentPage}" Route="CoffeeEquipmentPage" />
-            <ShellContent Title="Medium" ContentTemplate="{DataTemplate local:CoffeeEquipmentPage}" Route="CoffeeEquipmentPage2" />
+            <ShellContent Title="Welcome" ContentTemplate="{DataTemplate local:WAOUpgradePage}" Route="WAOUpgradePage" />
+            <ShellContent Title="Buildings" ContentTemplate="{DataTemplate local:WAOUpgradePage}" Route="WAOUpgradePage2" />
             <ShellContent Title="Dark" ContentTemplate="{DataTemplate local:CoffeeEquipmentPage}" Route="CoffeeEquipmentPage3" />
         </Tab>
         <Tab Title="Espresso">
@@ -152,7 +152,17 @@
         </FlyoutItem.Icon>
         <ShellContent ContentTemplate="{DataTemplate local:MyStoredCoffeePage}" Route="MyStoredCoffeePage" />
     </FlyoutItem>
-
+    
+    <FlyoutItem Title="Buildings">
+        <FlyoutItem.Icon>
+            <FontImageSource FontFamily="FAS"
+                             Color="{AppThemeBinding 
+                                    Dark=White, 
+                                    Light={StaticResource SystemGray5Dark}}"
+                             Glyph="{x:Static fontAwesome:FontAwesomeIcons.List}"/>
+        </FlyoutItem.Icon>
+        <ShellContent ContentTemplate="{DataTemplate local:WAOUpgradePage}" Route="WAOUpgradePage1" />
+    </FlyoutItem>
 
     <FlyoutItem Title="Internet Coffee">
         <FlyoutItem.Icon>

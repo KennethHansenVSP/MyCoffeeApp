@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MyCoffeeApp.Views.WAOUpgradePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:model="clr-namespace:MyCoffeeApp.Shared.Models;assembly=MyCoffeeApp.Shared"
+    xmlns:mvvm="clr-namespace:MvvmHelpers;assembly=MvvmHelpers"
+    xmlns:viewmodels="clr-namespace:MyCoffeeApp.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:Name="WAOUPage"
+    x:DataType="viewmodels:WAOUpgradeViewModel"
+    BackgroundColor="{AppThemeBinding 
+                    Dark={StaticResource WindowBackgroundColorDark}, 
+                    Light={StaticResource WindowBackgroundColor}}">
+    <ContentPage.BindingContext>
+        <viewmodels:WAOUpgradeViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <xct:ItemSelectedEventArgsConverter x:Key="ItemSelectedEventArgsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+        <Label Grid.Column="0" Grid.ColumnSpan="2" Text="Buildings" 
+                FontAttributes="Bold" 
+                HorizontalOptions="Center" />
+        <Picker Grid.Column="0" Grid.Row="1" Title="Select Building" 
+                TitleColor="LightBlue"
+                ItemsSource="{Binding BuildingsColl}" 
+                ItemDisplayBinding="{Binding Name}"
+                SelectedItem="{Binding SelectedBuilding}" />
+        <Label Grid.Column="0" Grid.Row="2" Text="{Binding SelectedBuilding.Name}" 
+                   HorizontalOptions="Center" 
+                   Style="{DynamicResource TitleStyle}" />
+        <Picker Grid.Column="1" Grid.Row="1" Title="Select Level" 
+                TitleColor="LightBlue"
+                ItemsSource="{Binding Levels}" 
+                ItemDisplayBinding="{Binding LevelName}"
+                SelectedItem="{Binding SelectedLevel}" />
+        <Label Grid.Column="1" Grid.Row="2" Text="{Binding SelectedLevel.LevelName}" 
+                   HorizontalOptions="Center" 
+                   Style="{DynamicResource TitleStyle}" />
+        <ListView Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"
+            IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+            ItemsSource="{Binding GrowtRequirements}"
+            RefreshCommand="{Binding RefreshCommand}"
+            SelectionMode="Single"
+            Style="{StaticResource CoffeeListView}"
+            CachingStrategy="RecycleElement">
+            <ListView.Behaviors>
+                <xct:EventToCommandBehavior
+                EventName="ItemSelected"
+                Command="{Binding SelectedCommand}"                
+                EventArgsConverter="{StaticResource ItemSelectedEventArgsConverter}"/>
+            </ListView.Behaviors>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="model:GrowtRequirements">
+                    <ViewCell>
+                        <Grid Padding="5">
+                            <Frame  Style="{StaticResource CoffeeCard}">
+                                <StackLayout Orientation="Vertical">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*" />
+                                            <RowDefinition Height="1*" />
+                                            <RowDefinition Height="1*" />
+                                            <RowDefinition Height="1*" />
+                                            <RowDefinition Height="1*" />
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Column="0" Grid.Row="0" Style="{StaticResource LabelSmall}" Text="{Binding BuildingName}"/>
+                                        <Label Grid.Column="1" Grid.Row="0" Style="{StaticResource LabelSmall}" Text="{Binding BuildingLevel}"/>
+                                        <Label Grid.Column="0" Grid.Row="1" Text="Food: " Style="{StaticResource LabelSmall}"/>
+                                        <Label Grid.Column="1" Grid.Row="1" Style="{StaticResource LabelSmall}" Text="{Binding Food}"/>
+                                        <Label Grid.Column="2" Grid.Row="1" Text="Wood: " Style="{StaticResource LabelSmall}"/>
+                                        <Label Grid.Column="3" Grid.Row="1" Style="{StaticResource LabelSmall}" Text="{Binding Wood}"/>
+                                        <Label Grid.Column="0" Grid.Row="2" Text="Stone: " Style="{StaticResource LabelSmall}"/>
+                                        <Label Grid.Column="1" Grid.Row="2" Style="{StaticResource LabelSmall}" Text="{Binding Stone}"/>
+                                        <Label Grid.Column="2" Grid.Row="2" Text="Iron: " Style="{StaticResource LabelSmall}"/>
+                                        <Label Grid.Column="3" Grid.Row="2" Style="{StaticResource LabelSmall}" Text="{Binding Iron}"/>
+                                        <Label Grid.Column="0" Grid.Row="3" Text="Azurite: " Style="{StaticResource LabelSmall}"/>
+                                        <Label Grid.Column="1" Grid.Row="3" Style="{StaticResource LabelSmall}" Text="{Binding Azurite}"/>
+                                        <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Text="Requirements: " Style="{StaticResource LabelSmall}"/>
+                                        <Label Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource LabelSmall}" Text="{Binding Dependencies}"/>
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>
